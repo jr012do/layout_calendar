@@ -1,7 +1,7 @@
 $calendar__day-size: 100px;
 $calendar__gap: 1px;
 $calendar__columns: 7;
-$calendar__padding: 10px;
+$calendar__padding: 5px;
 $calendar__width: ($calendar__day-size * $calendar__columns) + ($calendar__gap * ($calendar__columns - 1)) + ($calendar__padding * 2);
 $start-days: (
   mon: 0,
