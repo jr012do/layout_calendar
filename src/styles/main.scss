@@ -1,5 +1,4 @@
 $calendar__day-size: 100px;
-$calendar__day-size: 100px;
 $calendar__gap: 1px;
 $calendar__columns: 7;
 $calendar__padding: 10px;
@@ -42,17 +41,16 @@ body {
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-
+  transition: all 0.5s ease;
   &:hover {
-    background-color: #ffbfcb;
-    transition: all 0.5s ease;
     transform: translateY(-20px);
+    background-color: #ffbfcb;
     cursor: pointer;
   }
 }
 
 @for $i from 1 through 31 {
-  .calendar__day.day-#{$i}::before {
+  .calendar__day:nth-child(#{$i})::before {
     content: '#{$i}';
     font-family: Arial, sans-serif;
     font-size: 30px;
@@ -64,7 +62,7 @@ body {
 }
 
 @each $day, $offset in $start-days {
-  .calendar--start-day-#{$day} .day-1 {
+  .calendar--start-day-#{$day} .calendar__day:nth-child(1) {
     margin-left: calc(
       (#{$calendar__day-size} + #{$calendar__gap}) * #{$offset}
     );
